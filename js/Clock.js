@@ -9,13 +9,17 @@ function showTime() {
     var session = "AM"
 
     if (twelveHour == true) {
-        if (hours == 0) {
-            hours = 12; //12 hour format
+        if (hours > 11) {
+            session = "PM";
+            if (hours > 12) {
+                hours -= 12; //12 hour format
+
+            }
         }
 
-        if (hours > 12) {
-            hours -= 12; //12 hour format
-            session = "PM";
+        if (hours == 0) {
+            hours = 12; //12 hour format
+            session = "AM";
         }
     }
 
